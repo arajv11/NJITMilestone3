@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Comfortaa', sans-serif;
+  background-image: linear-gradient(cyan, rgb(255, 100, 100));
+}
+
+.site-container {
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.btn-primary {
+  background-color: yellow;
+  color: black;
+  /* border: 4px solid black; */
+  transition: 0.5s;
+}
+
+.btn-primary:hover {
+  background-color: gray;
+  color: yellow;
+  /* border: 4px solid black; */
+  transition: 0.5s;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rating span {
+  color: green;
+}
+
+.product {
+  border: 1px #404040 solid;
+  margin: 1rem;
+}
+
+.product img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.img-large {
+  max-width: 100%;
+}
+
+.img-thumbnail {
+  height: 80px;
+}
+
+.small-container {
+  max-width: 600px;
+}
+
+.checkout-steps > div {
+  border: 0.2rem solid black;
+  border-radius: 10rem;
+  background-color: yellow;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.checkout-steps > div.active {
+  color: white;
+  background-color: green;
+}
+
+h1 {
+  text-align: center;
+}
+
+.badge {
+  font-size: 1rem;
+}
