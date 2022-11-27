@@ -13,6 +13,7 @@ import ItemPage from './pages/ItemPage';
 import EnrollmentPage from './pages/EnrollmentPage';
 import SignInPage from './pages/SignInPage';
 import CartPage from './pages/CartPage';
+import ShippingAddressPage from './pages/ShippingAddressPage';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -47,10 +48,6 @@ function App() {
               </Link>
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                  {/* <LinkContainer to="/allOrders">
-                      <NavDropdown.Item>Order History</NavDropdown.Item>
-                    </LinkContainer>
-                    <NavDropdown.Divider /> */}
                   <Link
                     className="dropdown-item"
                     to="#logout"
@@ -74,6 +71,7 @@ function App() {
               <Route path="/signIn" element={<SignInPage />} />
               <Route path="/enroll" element={<EnrollmentPage />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="/shipping" element={<ShippingAddressPage />} />
               <Route path="/" element={<HomePage />} />
             </Routes>
           </Container>
