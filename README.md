@@ -1,5 +1,13 @@
 # Mock sales site for wrist watches(CatchWatch)
 
+# About the app: I built this to practice making a full stack application to showcase online shopping experience
+
+# How to use:
+
+# Technologies used:
+
+MongoDB, Express, React, Node, React-Bootstrap, Fontawesome, axios, react-router-dom, bcryptjs, dotenv, jsonwebtoken, mongoose
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
