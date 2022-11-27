@@ -43,7 +43,7 @@ function HomePage() {
   }, []);
   return (
     <div>
-      <h1>Inventory</h1>
+      <h1>Our Offerings</h1>
       <div className="products">
         {loading ? (
           <LoadingBox />

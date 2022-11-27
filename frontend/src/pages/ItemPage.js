@@ -121,9 +121,7 @@ function ItemPage() {
                 {item.countInStock > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
-                      <Button onClick={addToCartHandler} variant="primary">
-                        Buy this item
-                      </Button>
+                      <Button onClick={addToCartHandler}>Buy this item</Button>
                     </div>
                   </ListGroup.Item>
                 )}

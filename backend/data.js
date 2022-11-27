@@ -126,7 +126,7 @@ const data = {
       slug: 'White Sport M-L',
       // category: 'Smart watch',
       image: '/images/white.jpg',
-      price: 529.99,
+      price: 530,
       countInStock: 5,
       brand: 'Apple',
       rating: 4.5,
