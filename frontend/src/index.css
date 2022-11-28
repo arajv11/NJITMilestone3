@@ -18,10 +18,6 @@ main {
   text-align: right;
 }
 
-#basic-nav-dropdown {
-  padding: 2px;
-}
-
 .btn-primary {
   background-color: yellow;
   color: black;
@@ -40,8 +36,15 @@ main {
   border: 4px solid black;
 }
 
+.card {
+  border: 4px solid black;
+  border-radius: 15%;
+}
+
 .product-info {
   font-size: 1.2rem;
+  background-color: yellow;
+  border: 0;
 }
 
 .products {
@@ -49,12 +52,15 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  border: 4px solid black;
 }
 
 .rating {
   color: green;
   font-size: 1.1rem;
+}
+
+.img {
+  max-width: 70%;
 }
 
 .product img {

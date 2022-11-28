@@ -20,7 +20,6 @@ function Item(props) {
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/items/${item._id}`);
     if (data.countInStock < quantity) {
-      // window.alert('Sorry. Item is out of stock');
       toast.info('Sorry. Item is out of stock');
       return;
     }
@@ -31,9 +30,9 @@ function Item(props) {
   };
 
   return (
-    <Card>
+    <Card className="card">
       <Link to={`item/${item.slug}`}>
-        <img src={item.image} className="card-img-top" alt={item.name} />
+        <img src={item.image} className="card-img-top img" alt={item.name} />
       </Link>
       <Card.Body>
         <Link to={`item/${item.slug}`}>

@@ -48,9 +48,7 @@ export default function CartPage() {
       <Row>
         <Col md={8}>
           {cartItems.length === 0 ? (
-            <MessageBox>
-              Cart is empty. <Link to="/">Go Shopping</Link>
-            </MessageBox>
+            <MessageBox variant="danger">No items in cart</MessageBox>
           ) : (
             <ListGroup>
               {cartItems.map((item) => (
