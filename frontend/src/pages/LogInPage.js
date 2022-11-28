@@ -9,7 +9,7 @@ import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
 
-export default function SignInPage() {
+export default function LogInPage() {
   const navigate = useNavigate();
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get('redirect');
@@ -24,7 +24,7 @@ export default function SignInPage() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('/api/users/signin', {
+      const { data } = await axios.post('/api/users/login', {
         email,
         password,
       });
@@ -45,9 +45,9 @@ export default function SignInPage() {
   return (
     <Container className="small-container">
       <Helmet>
-        <title>Sign In</title>
+        <title>Log In</title>
       </Helmet>
-      <h1 className="my-3">Sign In</h1>
+      <h1 className="my-3">Log In</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
@@ -66,7 +66,7 @@ export default function SignInPage() {
           />
         </Form.Group>
         <div className="mb-3">
-          <Button type="submit">Sign In</Button>
+          <Button type="submit">Log In</Button>
         </div>
         <div className="mb-3">
           Don't have an account?{' '}

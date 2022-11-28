@@ -88,7 +88,7 @@ export default function EnrollmentPage() {
         </div>
         <div className="mb-3">
           Already have an account?{' '}
-          <Link to={`/enroll?redirect=${redirect}`}>Sign In</Link>
+          <Link to={`/enroll?redirect=${redirect}`}>Log In</Link>
         </div>
       </Form>
     </Container>

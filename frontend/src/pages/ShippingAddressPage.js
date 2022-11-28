@@ -23,7 +23,7 @@ export default function ShippingAddressPage() {
 
   useEffect(() => {
     if (!userInfo) {
-      navigate('/signin?redirect=/shipping');
+      navigate('/login?redirect=/shipping');
     }
   }, [userInfo, navigate]);
 

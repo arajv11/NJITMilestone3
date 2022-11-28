@@ -11,9 +11,10 @@ import { Store } from './Store';
 import HomePage from './pages/HomePage';
 import ItemPage from './pages/ItemPage';
 import EnrollmentPage from './pages/EnrollmentPage';
-import SignInPage from './pages/SignInPage';
+import LogInPage from './pages/LogInPage';
 import CartPage from './pages/CartPage';
 import ShippingAddressPage from './pages/ShippingAddressPage';
+import PlaceOrderPage from './pages/PlaceOrderPage';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -47,18 +48,22 @@ function App() {
                 My orders
               </Link>
               {userInfo ? (
-                <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
+                <NavDropdown
+                  title={userInfo.name}
+                  id="basic-nav-dropdown"
+                  align="end"
+                >
                   <Link
                     className="dropdown-item"
                     to="#logout"
                     onClick={logOutHandler}
                   >
-                    Sign Out
+                    Log Out
                   </Link>
                 </NavDropdown>
               ) : (
-                <Link className="nav-link" to="/signin">
-                  Sign In
+                <Link className="nav-link" to="/login">
+                  Log In
                 </Link>
               )}
             </Container>
@@ -68,10 +73,11 @@ function App() {
           <Container className="mt-3">
             <Routes>
               <Route path="item/:slug" element={<ItemPage />} />
-              <Route path="/signIn" element={<SignInPage />} />
+              <Route path="/login" element={<LogInPage />} />
               <Route path="/enroll" element={<EnrollmentPage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/shipping" element={<ShippingAddressPage />} />
+              <Route path="/placeorder" element={<PlaceOrderPage />} />
               <Route path="/" element={<HomePage />} />
             </Routes>
           </Container>

@@ -14,6 +14,14 @@ main {
   flex: 1;
 }
 
+.dropdown-item {
+  text-align: right;
+}
+
+#basic-nav-dropdown {
+  padding: 2px;
+}
+
 .btn-primary {
   background-color: yellow;
   color: black;
