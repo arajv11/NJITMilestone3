@@ -1,12 +1,10 @@
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
-import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Item from '../components/Item';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-// import data from '../data';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -22,12 +20,11 @@ const reducer = (state, action) => {
 };
 
 function HomePage() {
-  const [{ loading, error, items }, dispatch] = useReducer(logger(reducer), {
+  const [{ loading, error, items }, dispatch] = useReducer(reducer, {
     items: [],
     loading: true,
     error: '',
   });
-  // const [items, setItems] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
@@ -37,7 +34,6 @@ function HomePage() {
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
       }
-      // setItems(result.data);
     };
     fetchData();
   }, []);
