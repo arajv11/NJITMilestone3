@@ -4,16 +4,31 @@
 
 # About the app: I built this to practice making a full stack application to showcase online shopping experience
 
-# How to use:
+# App is available at https://catchwatch.herokuapp.com
+
+# To run locally:
+
+1. Download the source code and create a .env file in the backend folder with two variables:
+
+   JWT_SECRET, which is a string
+   MONGODB_URI, which is for a local connection to MongoDB on your computer
+
+2. Run npm install in the frontend and backend folders to install dependencies
+
+# How to use CatchWatch:
 
 Navigation links are at the top of the page.
-Home page link is CatchWatch(top left). Home page displays all offerings.
-Each time you click "Buy this item", the item is added to the cart(link on the top).
-Go to cart link to make adjustments and proceed to checkout.
-You need to log in to make purchase(top right). If you don't have an account, go to https://catchwatch.herokuapp.com/enroll (don't forget your password).
-If you are logged in you can proceed to checkout. First, enter name and address(shipping only for United States). Submit info to see order preview.
-On order preview page, click "edit" button if you want to change the shipping info.
-Click "Place Order" when ready
+
+1. Go to home page. The link is CatchWatch(top left). Home page displays all offerings.
+2. Each time you click "Buy this item", the item is added to the cart(link on the top).
+3. Go to cart link to make adjustments and proceed to checkout.
+4. You need to log in to make purchase(top right). If you don't have an account, type the homepage URL then /enroll (https://catchwatch.herokuapp.com/enroll or http://localhost:3000/enroll
+5. Create account
+6. If you are logged in you can proceed to checkout. First, enter name and address(shipping only for United States). Submit info to see order preview.
+7. On the order preview page, click "edit" button if you want to change the shipping info.
+8. Click "Place Order" when ready. All orders are available in "My orders"(link on the top)
+
+Sign out is in the top right.
 
 # Technologies used:
 
@@ -30,7 +45,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser. If port 3000 is not available on your computer, go to another port.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
