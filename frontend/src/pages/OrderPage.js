@@ -94,6 +94,21 @@ export default function OrderPage() {
           </Card>
           <Card className="mb-3">
             <Card.Body>
+              <Card.Title>Payment</Card.Title>
+              <Card.Text>
+                <strong>Method:</strong> {order.paymentMethod}
+              </Card.Text>
+              {order.isPaid ? (
+                <MessageBox variant="success">
+                  Paid at {order.paidAt}
+                </MessageBox>
+              ) : (
+                <MessageBox variant="success">Cash on delivery</MessageBox>
+              )}
+            </Card.Body>
+          </Card>
+          <Card className="mb-3">
+            <Card.Body>
               <Card.Title>Items</Card.Title>
               <ListGroup variant="flush">
                 {order.orderItems.map((item) => (

@@ -1,13 +1,13 @@
-function Rating(props) {
-  const { rating, numReviews } = props;
+function customerRating(props) {
+  const { customerRating, reviewCount } = props;
   return (
-    <div className="rating">
+    <div className="customerRating">
       <span>
         <i
           className={
-            rating >= 1
+            customerRating >= 1
               ? 'fas fa-star'
-              : rating >= 0.5
+              : customerRating >= 0.5
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
@@ -16,9 +16,9 @@ function Rating(props) {
       <span>
         <i
           className={
-            rating >= 2
+            customerRating >= 2
               ? 'fas fa-star'
-              : rating >= 1.5
+              : customerRating >= 1.5
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
@@ -27,9 +27,9 @@ function Rating(props) {
       <span>
         <i
           className={
-            rating >= 3
+            customerRating >= 3
               ? 'fas fa-star'
-              : rating >= 2.5
+              : customerRating >= 2.5
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
@@ -38,9 +38,9 @@ function Rating(props) {
       <span>
         <i
           className={
-            rating >= 4
+            customerRating >= 4
               ? 'fas fa-star'
-              : rating >= 3.5
+              : customerRating >= 3.5
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
@@ -49,9 +49,9 @@ function Rating(props) {
       <span>
         <i
           className={
-            rating >= 5
+            customerRating >= 5
               ? 'fas fa-star'
-              : rating >= 4.5
+              : customerRating >= 4.5
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
@@ -59,7 +59,7 @@ function Rating(props) {
       </span>
       <span>
         <br />
-        {numReviews} reviews
+        {reviewCount} reviews
       </span>
       <br />
       <br />
@@ -67,4 +67,4 @@ function Rating(props) {
   );
 }
 
-export default Rating;
+export default customerRating;

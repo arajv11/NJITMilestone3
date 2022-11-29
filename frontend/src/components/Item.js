@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Rating from './Rating';
+import CustomerRating from './CustomerRating';
 import axios from 'axios';
 import { useContext } from 'react';
 import { Store } from '../Store';
@@ -19,7 +18,7 @@ function Item(props) {
     const existItem = cartItems.find((x) => x._id === item._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/items/${item._id}`);
-    if (data.countInStock < quantity) {
+    if (data.stockCount < quantity) {
       toast.info('Sorry. Item is out of stock');
       return;
     }
@@ -31,16 +30,17 @@ function Item(props) {
 
   return (
     <Card className="card">
-      <Link to={`item/${item.slug}`}>
+      <div>
         <img src={item.image} className="card-img-top img" alt={item.name} />
-      </Link>
+      </div>
       <Card.Body>
-        <Link to={`item/${item.slug}`}>
-          <Card.Title>{item.name}</Card.Title>
-        </Link>
+        <Card.Title>{item.name}</Card.Title>
         <Card.Text className="product-info">${item.price}</Card.Text>
-        <Rating rating={item.rating} numReviews={item.numReviews} />
-        {item.countInStock === 0 ? (
+        <CustomerRating
+          customerRating={item.customerRating}
+          reviewCount={item.reviewCount}
+        />
+        {item.stockCount === 0 ? (
           <Button variant="danger">Out of stock</Button>
         ) : (
           <Button onClick={() => addToCartHandler(item)}>Buy this item</Button>

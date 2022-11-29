@@ -9,13 +9,13 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { useContext } from 'react';
 import { Store } from './Store';
 import HomePage from './pages/HomePage';
-import ItemPage from './pages/ItemPage';
 import EnrollmentPage from './pages/EnrollmentPage';
 import LogInPage from './pages/LogInPage';
 import CartPage from './pages/CartPage';
 import ShippingAddressPage from './pages/ShippingAddressPage';
 import PlaceOrderPage from './pages/PlaceOrderPage';
 import OrderPage from './pages/OrderPage';
+import AllOrdersPage from './pages/AllOrdersPage';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -45,7 +45,7 @@ function App() {
                   </Badge>
                 )}
               </Link>
-              <Link to="/allOrders" className="nav-link">
+              <Link to="/allmyorders" className="nav-link">
                 My orders
               </Link>
               {userInfo ? (
@@ -73,13 +73,13 @@ function App() {
         <main>
           <Container className="mt-3">
             <Routes>
-              <Route path="item/:slug" element={<ItemPage />} />
               <Route path="/login" element={<LogInPage />} />
               <Route path="/enroll" element={<EnrollmentPage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/shipping" element={<ShippingAddressPage />} />
               <Route path="/placeorder" element={<PlaceOrderPage />} />
               <Route path="/order/:id" element={<OrderPage />} />
+              <Route path="/allmyorders" element={<AllOrdersPage />} />
               <Route path="/" element={<HomePage />} />
             </Routes>
           </Container>
