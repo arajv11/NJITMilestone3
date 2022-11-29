@@ -1,8 +1,19 @@
+# Note: Not for real purchases, just to practice MERN stack
+
 # Mock sales site for wrist watches(CatchWatch)
 
 # About the app: I built this to practice making a full stack application to showcase online shopping experience
 
 # How to use:
+
+Navigation links are at the top of the page.
+Home page link is CatchWatch(top left). Home page displays all offerings.
+Each time you click "Buy this item", the item is added to the cart(link on the top).
+Go to cart link to make adjustments and proceed to checkout.
+You need to log in to make purchase(top right). If you don't have an account, go to https://catchwatch.herokuapp.com/enroll (don't forget your password).
+If you are logged in you can proceed to checkout. First, enter name and address(shipping only for United States). Submit info to see order preview.
+On order preview page, click "edit" button if you want to change the shipping info.
+Click "Place Order" when ready
 
 # Technologies used:
 

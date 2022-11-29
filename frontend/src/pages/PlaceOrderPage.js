@@ -94,7 +94,13 @@ export default function PlaceOrderPage() {
                 {cart.shippingAddress.city}, {cart.shippingAddress.state},{' '}
                 {cart.shippingAddress.zipCode},{cart.shippingAddress.country}
               </Card.Text>
-              <Link to="/shipping">Edit</Link>
+              <Button
+                onClick={() => {
+                  navigate('/shipping');
+                }}
+              >
+                Edit
+              </Button>
             </Card.Body>
           </Card>
 
@@ -130,7 +136,6 @@ export default function PlaceOrderPage() {
                   </ListGroup.Item>
                 ))}
               </ListGroup>
-              <Link to="/cart">Edit</Link>
             </Card.Body>
           </Card>
         </Col>
@@ -171,6 +176,7 @@ export default function PlaceOrderPage() {
                   <div className="d-grid">
                     <Button
                       type="button"
+                      class="btn-primary"
                       onClick={placeOrderHandler}
                       disabled={cart.cartItems.length === 0}
                     >

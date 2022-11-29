@@ -112,9 +112,7 @@ export default function ShippingAddressPage() {
             />
           </Form.Group>
           <div className="mb-3">
-            <Button variant="primary" type="submit">
-              Continue
-            </Button>
+            <Button type="submit">Continue</Button>
           </div>
         </Form>
       </div>

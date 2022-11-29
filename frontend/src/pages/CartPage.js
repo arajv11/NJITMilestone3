@@ -111,7 +111,7 @@ export default function CartPage() {
                   <div className="d-grid">
                     <Button
                       type="button"
-                      variant="primary"
+                      className="btn-success"
                       onClick={checkoutHandler}
                       disabled={cartItems.length === 0}
                     >
