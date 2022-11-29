@@ -6,7 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
@@ -81,7 +80,8 @@ export default function OrderPage() {
               <Card.Text>
                 <strong>Name:</strong> {order.shippingAddress.name} <br />
                 <strong>Street/Unit #: </strong> {order.shippingAddress.address}
-                ,{order.shippingAddress.city}, {order.shippingAddress.state},{' '}
+                ,{order.shippingAddress.city},{' '}
+                {order.shippingAddress.shippingState},{' '}
                 {order.shippingAddress.zipCode},{order.shippingAddress.country}
               </Card.Text>
               <MessageBox variant="success">
@@ -118,7 +118,7 @@ export default function OrderPage() {
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link to={`/item/${item.slug}`}>{item.name}</Link>
+                        <span>{item.name}</span>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>

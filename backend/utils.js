@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 
+// Generate a JWT token associated with the user when they sign in
 export const generateToken = (user) => {
   return jwt.sign(
     {
@@ -9,17 +10,20 @@ export const generateToken = (user) => {
     },
     process.env.JWT_SECRET,
     {
-      expiresIn: '30d',
+      // Setting expiration time for JWT
+      expiresIn: '4h',
     }
   );
 };
 
 export const isAuth = (req, res, next) => {
-  const authorization = req.headers.authorization;
-  if (authorization) {
-    const token = authorization.slice(7, authorization.length); // Bearer XXXXXX
-    jwt.verify(token, process.env.JWT_SECRET, (err, decode) => {
-      if (err) {
+  const authorizationHeader = req.headers.authorization;
+  if (authorizationHeader) {
+    const token = authorizationHeader.slice(7, authorizationHeader.length);
+    // Token comes in as Bearer token
+    // Take only token after "Bearer "
+    jwt.verify(token, process.env.JWT_SECRET, (error, decode) => {
+      if (error) {
         res.status(401).send({ message: 'Invalid Token' });
       } else {
         req.user = decode;
@@ -27,6 +31,6 @@ export const isAuth = (req, res, next) => {
       }
     });
   } else {
-    res.status(401).send({ message: 'No Token' });
+    res.status(401).send({ message: 'Unauthorized, missing token' });
   }
 };

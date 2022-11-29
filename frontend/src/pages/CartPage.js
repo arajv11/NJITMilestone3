@@ -7,7 +7,7 @@ import MessageBox from '../components/MessageBox';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function CartPage() {
@@ -58,7 +58,7 @@ export default function CartPage() {
                         alt={item.name}
                         className="img-fluid rounded img-thumbnail"
                       ></img>{' '}
-                      <Link to={`/item/${item.slug}`}>{item.name}</Link>
+                      <span>{item.name}</span>
                     </Col>
                     <Col md={3}>
                       <Button
@@ -87,7 +87,7 @@ export default function CartPage() {
                         onClick={() => removeItemHandler(item)}
                         variant="light"
                       >
-                        <i className="fas fa-trash"></i>
+                        <i className="fas fa-trash-alt icon"></i>
                       </Button>
                     </Col>
                   </Row>

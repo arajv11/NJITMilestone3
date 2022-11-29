@@ -41,6 +41,11 @@ main {
   border-radius: 15%;
 }
 
+.icon {
+  color: red;
+  font-size: 1.5rem;
+}
+
 .product-info {
   font-size: 1.2rem;
   background-color: yellow;

@@ -16,6 +16,7 @@ itemRouter.get('/slug/:slug', async (req, res) => {
     res.status(404).send({ message: 'Item Not Found' });
   }
 });
+
 itemRouter.get('/:id', async (req, res) => {
   const item = await Item.findById(req.params.id);
   if (item) {

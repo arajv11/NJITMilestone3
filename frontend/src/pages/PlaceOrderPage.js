@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useReducer } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
@@ -89,10 +89,12 @@ export default function PlaceOrderPage() {
             <Card.Body>
               <Card.Title>Shipping</Card.Title>
               <Card.Text>
-                <strong>Name: </strong> {cart.shippingAddress.name} <br />
-                <strong>Street/Unit #: </strong> {cart.shippingAddress.address},
-                {cart.shippingAddress.city}, {cart.shippingAddress.state},{' '}
-                {cart.shippingAddress.zipCode},{cart.shippingAddress.country}
+                <strong>Recipient Name: </strong> {cart.shippingAddress.name}{' '}
+                <br />
+                <strong>Delivery Address: </strong>{' '}
+                {cart.shippingAddress.address}, {cart.shippingAddress.city},{' '}
+                {cart.shippingAddress.shippingState},{' '}
+                {cart.shippingAddress.zipCode}, {cart.shippingAddress.country}
               </Card.Text>
               <Button
                 onClick={() => {
@@ -126,7 +128,7 @@ export default function PlaceOrderPage() {
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
-                        <Link to={`/item/${item.slug}`}>{item.name}</Link>
+                        <span>{item.name}</span>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>
