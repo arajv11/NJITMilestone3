@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 
-const data = {
+const seedData = {
   users: [
     {
       name: 'User1',
@@ -10,7 +10,7 @@ const data = {
     {
       name: 'User2',
       email: 'y@y.com',
-      password: bcrypt.hashSync('qwe'),
+      password: bcrypt.hashSync('rty'),
     },
   ],
   items: [
@@ -19,10 +19,9 @@ const data = {
       slug: 'Midnight Sport M-L',
       image: '/images/black.jpg',
       price: 530,
-      stockCount: 0,
-      brand: 'Apple',
+      stockCount: 10000,
       customerRating: 4.5,
-      reviewCount: 14,
+      reviewCount: 113,
       description: 'black smart watch',
     },
     {
@@ -30,10 +29,9 @@ const data = {
       slug: 'Red Sport M-L',
       image: '/images/red.jpg',
       price: 530,
-      stockCount: 5,
-      brand: 'Apple',
+      stockCount: 10000,
       customerRating: 4.5,
-      reviewCount: 10,
+      reviewCount: 70,
       description: 'red smart watch',
     },
     {
@@ -41,10 +39,9 @@ const data = {
       slug: 'Midnight Sport',
       image: '/images/black.jpg',
       price: 530,
-      stockCount: 1,
-      brand: 'Apple',
+      stockCount: 10000,
       customerRating: 4.5,
-      reviewCount: 14,
+      reviewCount: 123,
       description: 'black smart watch',
     },
     {
@@ -52,10 +49,9 @@ const data = {
       slug: 'Starlight Sport',
       image: '/images/starlight.jpg',
       price: 530,
-      stockCount: 5,
-      brand: 'Apple',
+      stockCount: 10000,
       customerRating: 4.5,
-      reviewCount: 10,
+      reviewCount: 43,
       description: 'cream-colored smart watch',
     },
     {
@@ -63,10 +59,9 @@ const data = {
       slug: 'Red Sport',
       image: '/images/red.jpg',
       price: 530,
-      stockCount: 5,
-      brand: 'Apple',
+      stockCount: 10000,
       customerRating: 4.5,
-      reviewCount: 10,
+      reviewCount: 231,
       description: 'red smart watch',
     },
     {
@@ -74,10 +69,9 @@ const data = {
       slug: 'White Sport S-M',
       image: '/images/white.jpg',
       price: 530,
-      stockCount: 5,
-      brand: 'Apple',
+      stockCount: 10000,
       customerRating: 4.5,
-      reviewCount: 10,
+      reviewCount: 32,
       description: 'white smart watch',
     },
     {
@@ -85,12 +79,11 @@ const data = {
       slug: 'White Sport M-L',
       image: '/images/white.jpg',
       price: 530,
-      stockCount: 5,
-      brand: 'Apple',
+      stockCount: 10000,
       customerRating: 4.5,
-      reviewCount: 10,
+      reviewCount: 3,
       description: 'white smart watch',
     },
   ],
 };
-export default data;
+export default seedData;

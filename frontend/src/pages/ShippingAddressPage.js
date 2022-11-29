@@ -12,7 +12,7 @@ export default function ShippingAddressPage() {
     userInfo,
     cart: { shippingAddress },
   } = state;
-  const [fullName, setName] = useState(shippingAddress.fullName || '');
+  const [name, setName] = useState(shippingAddress.name || '');
   const [address, setAddress] = useState(shippingAddress.address || '');
   const [city, setCity] = useState(shippingAddress.city || '');
   const [shippingState, setShippingState] = useState(
@@ -32,7 +32,7 @@ export default function ShippingAddressPage() {
     ctxDispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: {
-        fullName,
+        name,
         address,
         city,
         shippingState,
@@ -43,7 +43,7 @@ export default function ShippingAddressPage() {
     localStorage.setItem(
       'shippingAddress',
       JSON.stringify({
-        fullName,
+        name,
         address,
         city,
         shippingState,
@@ -63,10 +63,10 @@ export default function ShippingAddressPage() {
       <div className="container small-container">
         <h1 className="my-3">Where to send this order?</h1>
         <Form onSubmit={submitHandler}>
-          <Form.Group className="mb-3" controlId="fullName">
+          <Form.Group className="mb-3" controlId="name">
             <Form.Label>First & Last Name</Form.Label>
             <Form.Control
-              value={fullName}
+              value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
@@ -105,7 +105,11 @@ export default function ShippingAddressPage() {
           </Form.Group>
           <Form.Group className="mb-3" controlId="country">
             <Form.Label>Country</Form.Label>
-            <Form.Control value={'USA'} required />
+            <Form.Control
+              value={'USA'}
+              onChange={(e) => setCountry(e.target.value)}
+              required
+            />
           </Form.Group>
           <div className="mb-3">
             <Button variant="primary" type="submit">
