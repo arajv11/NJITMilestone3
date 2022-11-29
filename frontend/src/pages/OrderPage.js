@@ -11,7 +11,6 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
-import CheckoutSteps from '../components/CheckoutSteps';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -69,7 +68,6 @@ export default function OrderPage() {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
-      <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <br />
       <Helmet>
         <title>Order details {orderId}</title>
@@ -81,10 +79,10 @@ export default function OrderPage() {
             <Card.Body>
               <Card.Title>Shipping</Card.Title>
               <Card.Text>
-                <strong>Name:</strong> {order.shippingAddress.fullName} <br />
-                <strong>Address: </strong> {order.shippingAddress.address},
-                {order.shippingAddress.city}, {order.shippingAddress.postalCode}
-                ,{order.shippingAddress.country}
+                <strong>Name:</strong> {order.shippingAddress.name} <br />
+                <strong>Street/Unit #: </strong> {order.shippingAddress.address}
+                ,{order.shippingAddress.city}, {order.shippingAddress.state},{' '}
+                {order.shippingAddress.zipCode},{order.shippingAddress.country}
               </Card.Text>
               <MessageBox variant="success">
                 Items will be delivered in 3-5 business days. You will pay upon

@@ -4,7 +4,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { Store } from '../Store';
-import CheckoutSteps from '../components/CheckoutSteps';
 
 export default function ShippingAddressPage() {
   const navigate = useNavigate();
@@ -13,12 +12,13 @@ export default function ShippingAddressPage() {
     userInfo,
     cart: { shippingAddress },
   } = state;
-  const [fullName, setFullName] = useState(shippingAddress.fullName || '');
+  const [fullName, setName] = useState(shippingAddress.fullName || '');
   const [address, setAddress] = useState(shippingAddress.address || '');
   const [city, setCity] = useState(shippingAddress.city || '');
-  const [postalCode, setPostalCode] = useState(
-    shippingAddress.postalCode || ''
+  const [shippingState, setShippingState] = useState(
+    shippingAddress.shippingState || ''
   );
+  const [zipCode, setZipCode] = useState(shippingAddress.zipCode || '');
   const [country, setCountry] = useState(shippingAddress.country || '');
 
   useEffect(() => {
@@ -35,7 +35,8 @@ export default function ShippingAddressPage() {
         fullName,
         address,
         city,
-        postalCode,
+        shippingState,
+        zipCode,
         country,
       },
     });
@@ -45,7 +46,8 @@ export default function ShippingAddressPage() {
         fullName,
         address,
         city,
-        postalCode,
+        shippingState,
+        zipCode,
         country,
       })
     );
@@ -55,23 +57,22 @@ export default function ShippingAddressPage() {
   return (
     <div>
       <Helmet>
-        <title>Shipping Address</title>
+        <title>Where to send this order?</title>
       </Helmet>
-      <CheckoutSteps step1></CheckoutSteps>
       <br />
       <div className="container small-container">
-        <h1 className="my-3">Shipping Address</h1>
+        <h1 className="my-3">Where to send this order?</h1>
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3" controlId="fullName">
-            <Form.Label>Full Name</Form.Label>
+            <Form.Label>First & Last Name</Form.Label>
             <Form.Control
               value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="address">
-            <Form.Label>Address</Form.Label>
+            <Form.Label>Street/Unit #</Form.Label>
             <Form.Control
               value={address}
               onChange={(e) => setAddress(e.target.value)}
@@ -86,21 +87,25 @@ export default function ShippingAddressPage() {
               required
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="postalCode">
-            <Form.Label>Postal Code</Form.Label>
+          <Form.Group className="mb-3" controlId="shippingState">
+            <Form.Label>State</Form.Label>
             <Form.Control
-              value={postalCode}
-              onChange={(e) => setPostalCode(e.target.value)}
+              value={shippingState}
+              onChange={(e) => setShippingState(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="zipCode">
+            <Form.Label>Zip Code</Form.Label>
+            <Form.Control
+              value={zipCode}
+              onChange={(e) => setZipCode(e.target.value)}
               required
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="country">
             <Form.Label>Country</Form.Label>
-            <Form.Control
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-              required
-            />
+            <Form.Control value={'USA'} required />
           </Form.Group>
           <div className="mb-3">
             <Button variant="primary" type="submit">

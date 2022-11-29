@@ -10,7 +10,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
 import { Store } from '../Store';
-import CheckoutSteps from '../components/CheckoutSteps';
 import LoadingBox from '../components/LoadingBox';
 
 const reducer = (state, action) => {
@@ -79,7 +78,6 @@ export default function PlaceOrderPage() {
 
   return (
     <div>
-      <CheckoutSteps step1 step2></CheckoutSteps>
       <br />
       <Helmet>
         <title>Preview Order</title>
@@ -91,10 +89,10 @@ export default function PlaceOrderPage() {
             <Card.Body>
               <Card.Title>Shipping</Card.Title>
               <Card.Text>
-                <strong>Name: </strong> {cart.shippingAddress.fullName} <br />
-                <strong>Address: </strong> {cart.shippingAddress.address},
-                {cart.shippingAddress.city}, {cart.shippingAddress.postalCode},
-                {cart.shippingAddress.country}
+                <strong>Name: </strong> {cart.shippingAddress.name} <br />
+                <strong>Street/Unit #: </strong> {cart.shippingAddress.address},
+                {cart.shippingAddress.city}, {cart.shippingAddress.state},{' '}
+                {cart.shippingAddress.zipCode},{cart.shippingAddress.country}
               </Card.Text>
               <Link to="/shipping">Edit</Link>
             </Card.Body>

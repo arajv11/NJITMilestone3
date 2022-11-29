@@ -9,7 +9,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import CheckoutSteps from '../components/CheckoutSteps';
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -39,7 +38,6 @@ export default function CartPage() {
 
   return (
     <div>
-      <CheckoutSteps></CheckoutSteps>
       <br />
       <Helmet>
         <title>Shopping Cart</title>
