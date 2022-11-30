@@ -19,12 +19,12 @@
 
 Navigation links are at the top of the page.
 
-1. Go to home page. The link is CatchWatch(top left). Home page displays all offerings.
-2. Each time you click "Buy this item", the item is added to the cart(link on the top).
-3. Go to cart link to make adjustments and proceed to checkout.
-4. You need to log in to make purchase(top right). If you don't have an account, type the homepage URL then /enroll (https://catchwatch.herokuapp.com/enroll or http://localhost:3000/enroll
-5. Create account
-6. If you are logged in you can proceed to checkout. First, enter name and address(shipping only for United States). Submit info to see order preview.
+1. Open up the site
+2. You need to log in to make a purchase(top right). Create account if you don't have one.
+3. Home page displays all offerings.
+4. Each time you click "Buy this item", the item is added to the cart(link on the top).
+5. Go to cart link to make adjustments and proceed to checkout.
+6. If you are logged in you can proceed to checkout. First, enter name and address. Submit info to see order preview.
 7. On the order preview page, click "edit" button if you want to change the shipping info.
 8. Click "Place Order" when ready. All orders are available in "My orders"(link on the top)
 
@@ -33,6 +33,14 @@ Sign out is in the top right.
 # Technologies used:
 
 MongoDB, Express, React, Node, React-Bootstrap, Fontawesome, axios, react-router-dom, bcryptjs, dotenv, jsonwebtoken, mongoose
+
+# Functionalities I didn't add yet:
+
+-Updating the item quantity and adding new items to the shop
+-Password reset
+-Payment processing
+-Canceling order
+-Adding new reviews/ratings
 
 # Getting Started with Create React App
 
