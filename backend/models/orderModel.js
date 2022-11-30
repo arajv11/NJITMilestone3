@@ -23,7 +23,7 @@ const orderSchema = new mongoose.Schema(
       zipCode: { type: String, required: true },
       country: { type: String, required: true },
     },
-    paymentMethod: { type: String, required: true },
+    paymentMethod: { type: String },
     paymentResult: {
       id: String,
       status: String,
