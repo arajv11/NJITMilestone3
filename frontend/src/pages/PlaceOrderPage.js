@@ -39,11 +39,7 @@ export default function PlaceOrderPage() {
   cart.itemsPrice = round2(
     cart.cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
   );
-  cart.shippingPrice = cart.itemsPrice > 100 ? round2(0) : round2(10);
-  cart.taxPrice = round2(0.15 * cart.itemsPrice);
-  cart.totalPrice = round2(
-    cart.itemsPrice + cart.shippingPrice + cart.taxPrice
-  );
+  cart.totalPrice = round2(cart.itemsPrice + 5);
 
   const placeOrderHandler = async () => {
     try {
@@ -56,8 +52,6 @@ export default function PlaceOrderPage() {
           shippingAddress: cart.shippingAddress,
           paymentMethod: cart.paymentMethod,
           itemsPrice: cart.itemsPrice,
-          shippingPrice: cart.shippingPrice,
-          taxPrice: cart.taxPrice,
           totalPrice: cart.totalPrice,
         },
         {
@@ -87,15 +81,15 @@ export default function PlaceOrderPage() {
         <Col md={8}>
           <Card className="mb-3">
             <Card.Body>
-              <Card.Title>Shipping</Card.Title>
-              <Card.Text>
+              <h2>Shipping</h2>
+              <h5>
                 <strong>Recipient Name: </strong> {cart.shippingAddress.name}{' '}
                 <br />
                 <strong>Delivery Address: </strong>{' '}
                 {cart.shippingAddress.address}, {cart.shippingAddress.city},{' '}
                 {cart.shippingAddress.shippingState},{' '}
                 {cart.shippingAddress.zipCode}, {cart.shippingAddress.country}
-              </Card.Text>
+              </h5>
               <Button
                 onClick={() => {
                   navigate('/shipping');
@@ -105,16 +99,6 @@ export default function PlaceOrderPage() {
               </Button>
             </Card.Body>
           </Card>
-
-          <Card className="mb-3">
-            <Card.Body>
-              <Card.Title>Payment</Card.Title>
-              <Card.Text>
-                <strong>Method:</strong>Cash On Delivery
-              </Card.Text>
-            </Card.Body>
-          </Card>
-
           <Card className="mb-3">
             <Card.Body>
               <Card.Title>Items</Card.Title>
@@ -155,19 +139,13 @@ export default function PlaceOrderPage() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Shipping</Col>
-                    <Col>${cart.shippingPrice.toFixed(2)}</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Tax</Col>
-                    <Col>${cart.taxPrice.toFixed(2)}</Col>
+                    <Col>$5</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>
-                      <strong> Order Total</strong>
+                      <strong>Order Total</strong>
                     </Col>
                     <Col>
                       <strong>${cart.totalPrice.toFixed(2)}</strong>

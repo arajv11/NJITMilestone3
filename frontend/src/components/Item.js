@@ -27,7 +27,7 @@ function Item(props) {
   };
 
   return (
-    <Card className="card">
+    <Card>
       <div>
         <img src={item.image} className="card-img-top img" alt={item.name} />
       </div>
