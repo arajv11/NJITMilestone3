@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/esm/Button';
 import SpinnerIcon from '../components/SpinnerIcon';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
-import { getError } from '../APIErrorUtils';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -43,7 +42,7 @@ export default function AllOrdersPage() {
       } catch (error) {
         dispatch({
           type: 'FETCH_FAIL',
-          payload: getError(error),
+          payload: 'Unable to access info. Log in to see your orders.',
         });
       }
     };
