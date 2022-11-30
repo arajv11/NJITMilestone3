@@ -69,21 +69,23 @@ export default function OrderPage() {
     <div>
       <br />
       <Helmet>
-        <title>Order details {orderId}</title>
+        <title>Details for order # {orderId}</title>
       </Helmet>
-      <h1 className="my-3">Order details {orderId}</h1>
+      <h1 className="my-3">Details for order # {orderId}</h1>
       <Row>
         <Col md={8}>
           <Card className="mb-3">
-            <Card.Body>
-              <Card.Title>Shipping</Card.Title>
-              <Card.Text>
-                <strong>Name:</strong> {order.shippingAddress.name} <br />
-                <strong>Street/Unit #: </strong> {order.shippingAddress.address}
-                ,{order.shippingAddress.city},{' '}
+            <Card.Body className="align-left">
+              <h2>Shipping</h2>
+              <h5>
+                Recipient Name: {order.shippingAddress.name} <br />
+                <br />
+                Delivery Address:
+                <br />
+                {order.shippingAddress.address}, {order.shippingAddress.city},{' '}
                 {order.shippingAddress.shippingState},{' '}
-                {order.shippingAddress.zipCode},{order.shippingAddress.country}
-              </Card.Text>
+                {order.shippingAddress.zipCode}, {order.shippingAddress.country}
+              </h5>
               <MessageBox variant="success">
                 Items will be delivered in 3-5 business days. You will pay upon
                 receipt.
@@ -92,41 +94,30 @@ export default function OrderPage() {
           </Card>
           <Card className="mb-3">
             <Card.Body>
-              <Card.Title>Payment</Card.Title>
-              <Card.Text>
-                <strong>Method:</strong> {order.paymentMethod}
-              </Card.Text>
-              {order.isPaid ? (
-                <MessageBox variant="success">
-                  Paid at {order.paidAt}
-                </MessageBox>
-              ) : (
-                <MessageBox variant="success">Cash on delivery</MessageBox>
-              )}
-            </Card.Body>
-          </Card>
-          <Card className="mb-3">
-            <Card.Body>
-              <Card.Title>Items</Card.Title>
+              <h2>Items</h2>
               <ListGroup variant="flush">
                 {order.orderItems.map((item) => (
                   <ListGroup.Item key={item._id}>
                     <Row className="align-items-center">
-                      <Col md={6}>
+                      <span className="max-width">
                         <img
                           src={item.image}
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
+                      </span>
+                      <span className="max-width">
                         <span>{item.name}</span>
-                      </Col>
-                      <Col md={3}>
-                        <span>{item.quantity}</span>
-                      </Col>
-                      <Col md={3}>${item.price}</Col>
+                      </span>
+                      <span className="max-width">
+                        Quantity: {item.quantity}
+                      </span>
+                      <span className="max-width">Price: ${item.price}</span>
                     </Row>
                   </ListGroup.Item>
                 ))}
+                <br />
+                <br />
               </ListGroup>
             </Card.Body>
           </Card>

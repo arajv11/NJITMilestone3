@@ -85,9 +85,11 @@ export default function PlaceOrderPage() {
               <h5>
                 Recipient Name: {cart.shippingAddress.name} <br />
                 <br />
-                Delivery Address: {cart.shippingAddress.address},
-                {cart.shippingAddress.city},{cart.shippingAddress.shippingState}
-                ,{cart.shippingAddress.zipCode},{cart.shippingAddress.country}
+                Delivery Address:
+                <br />
+                {cart.shippingAddress.address}, {cart.shippingAddress.city},{' '}
+                {cart.shippingAddress.shippingState},{' '}
+                {cart.shippingAddress.zipCode}, {cart.shippingAddress.country}
               </h5>
               <Button
                 onClick={() => {
