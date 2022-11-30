@@ -15,6 +15,33 @@
 
 2. Run npm install in the frontend and backend folders to install dependencies
 
+# How to deploy on Heroku
+
+1. Download the source code
+2. Run npm install in the frontend and backend folders to install dependencies
+3. Run npm init in the root directory to create package.json
+4. Go to the package.json in the root directory and in “scripts”, put these two lines:
+
+   "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
+   "start": "node backend/server.js"
+
+5. In backend/server.js add “import path from 'path';” at the top of the file
+6. Add the following lines in backend/server.js
+
+const \_\_dirname = path.resolve();
+app.use(express.static(path.join(\_\_dirname, '/frontend/build')));
+app.get('\*', (req, res) => res.sendFile(path.join(\_\_dirname, '/frontend/build/index.html')) );
+
+7. Run “npm run build” in root directory
+8. Log in to Heroku and create a new app
+9. Go to “Deploy” and click on “Connect to Github”
+10. Select user and repository
+11. Click “Enable automatic deploys from Github”
+12. Go to “Settings” section to add “config vars”
+13. Make a commit in VSCode
+14. Go to “Activity” to view “build progress”
+15. If successful, view the site, you’re all set
+
 # How to use CatchWatch:
 
 Navigation links are at the top of the page.
