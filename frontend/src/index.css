@@ -84,3 +84,11 @@ h2 {
 .badge {
   font-size: 1rem;
 }
+
+.max-width {
+  max-width: 25%;
+}
+
+.align-left {
+  text-align: left;
+}

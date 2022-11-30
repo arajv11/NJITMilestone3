@@ -80,15 +80,14 @@ export default function PlaceOrderPage() {
       <Row>
         <Col md={8}>
           <Card className="mb-3">
-            <Card.Body>
+            <Card.Body className="align-left">
               <h2>Shipping</h2>
               <h5>
-                <strong>Recipient Name: </strong> {cart.shippingAddress.name}{' '}
+                Recipient Name: {cart.shippingAddress.name} <br />
                 <br />
-                <strong>Delivery Address: </strong>{' '}
-                {cart.shippingAddress.address}, {cart.shippingAddress.city},{' '}
-                {cart.shippingAddress.shippingState},{' '}
-                {cart.shippingAddress.zipCode}, {cart.shippingAddress.country}
+                Delivery Address: {cart.shippingAddress.address},
+                {cart.shippingAddress.city},{cart.shippingAddress.shippingState}
+                ,{cart.shippingAddress.zipCode},{cart.shippingAddress.country}
               </h5>
               <Button
                 onClick={() => {
@@ -101,26 +100,30 @@ export default function PlaceOrderPage() {
           </Card>
           <Card className="mb-3">
             <Card.Body>
-              <Card.Title>Items</Card.Title>
+              <h2>Items</h2>
               <ListGroup variant="flush">
                 {cart.cartItems.map((item) => (
                   <ListGroup.Item key={item._id}>
                     <Row className="align-items-center">
-                      <Col md={6}>
+                      <span className="max-width">
                         <img
                           src={item.image}
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{' '}
+                      </span>
+                      <span className="max-width">
                         <span>{item.name}</span>
-                      </Col>
-                      <Col md={3}>
-                        <span>{item.quantity}</span>
-                      </Col>
-                      <Col md={3}>${item.price}</Col>
+                      </span>
+                      <span className="max-width">
+                        Quantity: {item.quantity}
+                      </span>
+                      <span className="max-width">Price: ${item.price}</span>
                     </Row>
                   </ListGroup.Item>
                 ))}
+                <br />
+                <br />
               </ListGroup>
             </Card.Body>
           </Card>
