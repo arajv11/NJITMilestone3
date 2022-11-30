@@ -8,9 +8,9 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { toast } from 'react-toastify';
-import { getError } from '../utils';
+import { getError } from '../APIErrorUtils';
 import { Store } from '../Store';
-import LoadingBox from '../components/LoadingBox';
+import SpinnerIcon from '../components/SpinnerIcon';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -133,27 +133,27 @@ export default function PlaceOrderPage() {
         <Col md={4}>
           <Card>
             <Card.Body>
-              <Card.Title>Order Summary</Card.Title>
+              <h2>Order Summary</h2>
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <Row>
-                    <Col>Items</Col>
-                    <Col>${cart.itemsPrice.toFixed(2)}</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Shipping</Col>
-                    <Col>$5</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>
-                      <strong>Order Total</strong>
+                    <Col className="align-left">Items</Col>
+                    <Col className="align-right">
+                      ${cart.itemsPrice.toFixed(2)}
                     </Col>
-                    <Col>
-                      <strong>${cart.totalPrice.toFixed(2)}</strong>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col className="align-left">Shipping</Col>
+                    <Col className="align-right">$5.00</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col className="align-left">Order Total</Col>
+                    <Col className="align-right">
+                      ${cart.totalPrice.toFixed(2)}
                     </Col>
                   </Row>
                 </ListGroup.Item>
@@ -167,7 +167,7 @@ export default function PlaceOrderPage() {
                     >
                       Place Order
                     </Button>
-                    {loading && <LoadingBox></LoadingBox>}
+                    {loading && <SpinnerIcon />}
                   </div>
                 </ListGroup.Item>
               </ListGroup>

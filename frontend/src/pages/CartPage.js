@@ -68,7 +68,7 @@ export default function CartPage() {
                         variant="light"
                         disabled={item.quantity === 1}
                       >
-                        <i className="fas fa-minus-circle"></i>
+                        <i className="fas fa-minus-circle icon"></i>
                       </Button>{' '}
                       <span>{item.quantity}</span>{' '}
                       <Button
@@ -78,7 +78,7 @@ export default function CartPage() {
                         }
                         disabled={item.quantity === item.stockCount}
                       >
-                        <i className="fas fa-plus-circle"></i>
+                        <i className="fas fa-plus-circle icon-plus"></i>
                       </Button>
                     </Col>
                     <Col md={3}>${item.price}</Col>

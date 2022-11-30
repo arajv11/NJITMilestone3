@@ -13,11 +13,12 @@ const seedData = {
       password: bcrypt.hashSync('rty'),
     },
   ],
+  // Pictures from https://www.verizon.com/connected-smartwatches/apple-watch-series-8/
   items: [
     {
       name: 'Midnight Sport M/L',
       image: '/images/black.jpg',
-      price: 530,
+      price: 750,
       stockCount: 10000,
       customerRating: 4.5,
       reviewCount: 113,
@@ -26,7 +27,7 @@ const seedData = {
     {
       name: 'Red Sport M/L',
       image: '/images/red.jpg',
-      price: 530,
+      price: 750,
       stockCount: 10000,
       customerRating: 4.5,
       reviewCount: 70,
@@ -71,7 +72,7 @@ const seedData = {
     {
       name: 'White Sport M/L',
       image: '/images/white.jpg',
-      price: 530,
+      price: 750,
       stockCount: 10000,
       customerRating: 4.5,
       reviewCount: 3,

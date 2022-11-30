@@ -68,6 +68,7 @@ MongoDB, Express, React, Node, React-Bootstrap, Fontawesome, axios, react-router
 -Payment processing
 -Canceling order
 -Adding new reviews/ratings
+-Customer support
 
 # Getting Started with Create React App
 

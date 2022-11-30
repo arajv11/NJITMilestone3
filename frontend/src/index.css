@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Comfortaa', sans-serif;
-  background-image: linear-gradient(cyan, rgb(255, 100, 100));
+  background-color: cyan;
 }
 
 .site-container {
@@ -31,18 +31,31 @@ main {
   transition: 0.5s;
 }
 
-.btn-danger {
-  border: 4px solid black;
-}
-
 .card {
   border: 4px solid black;
   border-radius: 15%;
   text-align: center;
 }
 
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
 .icon {
   color: red;
+  font-size: 1.5rem;
+}
+
+.icon-plus {
+  color: green;
   font-size: 1.5rem;
 }
 
@@ -87,8 +100,4 @@ h2 {
 
 .max-width {
   max-width: 25%;
-}
-
-.align-left {
-  text-align: left;
 }

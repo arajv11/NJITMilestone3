@@ -24,7 +24,7 @@ export const isAuth = (req, res, next) => {
     // Take only token after "Bearer "
     jwt.verify(token, process.env.JWT_SECRET, (error, decode) => {
       if (error) {
-        res.status(401).send({ message: 'Invalid Token' });
+        res.status(401).send({ message: 'Token expired, please log back in' });
       } else {
         req.user = decode;
         next();

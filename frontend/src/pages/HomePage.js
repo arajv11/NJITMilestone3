@@ -3,7 +3,7 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Item from '../components/Item';
-import LoadingBox from '../components/LoadingBox';
+import SpinnerIcon from '../components/SpinnerIcon';
 import MessageBox from '../components/MessageBox';
 
 const reducer = (state, action) => {
@@ -42,7 +42,7 @@ function HomePage() {
       <h1>Our Offerings</h1>
       <div className="products">
         {loading ? (
-          <LoadingBox />
+          <SpinnerIcon />
         ) : error ? (
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (

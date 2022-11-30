@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/esm/Button';
-import LoadingBox from '../components/LoadingBox';
+import SpinnerIcon from '../components/SpinnerIcon';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
-import { getError } from '../utils';
+import { getError } from '../APIErrorUtils';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -57,7 +57,7 @@ export default function AllOrdersPage() {
 
       <h1>My Orders</h1>
       {loading ? (
-        <LoadingBox></LoadingBox>
+        <SpinnerIcon />
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (

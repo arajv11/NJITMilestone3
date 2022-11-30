@@ -6,10 +6,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
-import LoadingBox from '../components/LoadingBox';
+import SpinnerIcon from '../components/SpinnerIcon';
 import MessageBox from '../components/MessageBox';
 import { Store } from '../Store';
-import { getError } from '../utils';
+import { getError } from '../APIErrorUtils';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -62,7 +62,7 @@ export default function OrderPage() {
     }
   }, [order, userInfo, orderId, navigate, successPay]);
   return loading ? (
-    <LoadingBox></LoadingBox>
+    <SpinnerIcon />
   ) : error ? (
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
@@ -125,27 +125,27 @@ export default function OrderPage() {
         <Col md={4}>
           <Card className="mb-3">
             <Card.Body>
-              <Card.Title>Order Summary</Card.Title>
+              <h2>Order Summary</h2>
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <Row>
-                    <Col>Items</Col>
-                    <Col>${order.itemsPrice.toFixed(2)}</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Shipping</Col>
-                    <Col>$5</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>
-                      <strong>Order Total</strong>
+                    <Col className="align-left">Items</Col>
+                    <Col className="align-right">
+                      ${order.itemsPrice.toFixed(2)}
                     </Col>
-                    <Col>
-                      <strong>${order.totalPrice.toFixed(2)}</strong>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col className="align-left">Shipping</Col>
+                    <Col className="align-right">$5.00</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col className="align-left">Order Total</Col>
+                    <Col className="align-right">
+                      ${order.totalPrice.toFixed(2)}
                     </Col>
                   </Row>
                 </ListGroup.Item>
