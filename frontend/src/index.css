@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 body {
-  margin: 0;
   font-family: 'Comfortaa', sans-serif;
   background-image: linear-gradient(cyan, rgb(255, 100, 100));
 }
@@ -68,34 +67,12 @@ main {
   max-width: 70%;
 }
 
-.product img {
-  width: 100%;
-  max-width: 400px;
-}
-
-.img-large {
-  max-width: 100%;
-}
-
 .img-thumbnail {
   height: 80px;
 }
 
 .small-container {
   max-width: 600px;
-}
-
-.checkout-steps > div {
-  border: 0.2rem solid black;
-  border-radius: 10rem;
-  background-color: yellow;
-  font-size: 1.25rem;
-  text-align: center;
-}
-
-.checkout-steps > div.active {
-  color: white;
-  background-color: green;
 }
 
 h1 {

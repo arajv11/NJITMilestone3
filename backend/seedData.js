@@ -16,7 +16,6 @@ const seedData = {
   items: [
     {
       name: 'Midnight Sport M/L',
-      slug: 'Midnight Sport M-L',
       image: '/images/black.jpg',
       price: 530,
       stockCount: 10000,
@@ -26,7 +25,6 @@ const seedData = {
     },
     {
       name: 'Red Sport M/L',
-      slug: 'Red Sport M-L',
       image: '/images/red.jpg',
       price: 530,
       stockCount: 10000,
@@ -36,7 +34,6 @@ const seedData = {
     },
     {
       name: 'Midnight Sport',
-      slug: 'Midnight Sport',
       image: '/images/black.jpg',
       price: 530,
       stockCount: 10000,
@@ -46,7 +43,6 @@ const seedData = {
     },
     {
       name: 'Starlight Sport',
-      slug: 'Starlight Sport',
       image: '/images/starlight.jpg',
       price: 530,
       stockCount: 10000,
@@ -56,7 +52,6 @@ const seedData = {
     },
     {
       name: 'Red Sport',
-      slug: 'Red Sport',
       image: '/images/red.jpg',
       price: 530,
       stockCount: 10000,
@@ -66,7 +61,6 @@ const seedData = {
     },
     {
       name: 'White Sport S/M',
-      slug: 'White Sport S-M',
       image: '/images/white.jpg',
       price: 530,
       stockCount: 10000,
@@ -76,7 +70,6 @@ const seedData = {
     },
     {
       name: 'White Sport M/L',
-      slug: 'White Sport M-L',
       image: '/images/white.jpg',
       price: 530,
       stockCount: 10000,

@@ -48,7 +48,7 @@ function HomePage() {
         ) : (
           <Row>
             {items.map((item) => (
-              <Col key={item.slug} sm={6} md={4} lg={3} className="mb-3">
+              <Col key={item.name} sm={6} md={4} lg={3} className="mb-3">
                 <Item item={item}></Item>
               </Col>
             ))}
